@@ -1,0 +1,564 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&family=Ruda:wght@500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/codec-pro');
+:root {/*variables de tipo estilo*/
+    --cooperativo_segundario: #682155;
+    --corporativo: #820053;
+    --verde_secundario: #40916c;
+    --titulos: #2d6a4f;
+    --blanco: #ffffff;
+    --text: #111111;
+    --menu-height: 3rem;
+}
+
+/*ESTILOS GENERALES*/
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    h3 {
+        font-family: "Codec Pro", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 22px;
+        color: var(--corporativo);
+        margin-top: 0;
+        text-align: center;
+    }
+    h5 {
+        font-family: "Codec Pro", sans-serif;
+        font-size: 13px;
+        color: var(--blanco);
+        margin: 10px 0 0 10px;
+    }
+    p {
+        font-family: "Codec Pro", sans-serif;
+        font-size: 16px;
+        color: var(--blanco);
+        font-weight: normal;
+    }
+      dialog{
+          display: none;
+      }
+    dialog::backdrop {
+        background-color: rgba(0,0,0,0.3);
+        backdrop-filter: blur(1px);
+    }
+    /*ESTILOS BLOQUE HEADER*/
+    .encabezado {
+        flex: 1 1 100%;
+        height: 65px;
+        display: flex;
+        border-bottom: 1px #797979 solid;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .encabezado img{
+        height: 4rem;
+        width: auto;
+        max-width: 100%;
+    }
+    .logo {
+        display: block;
+        height: 100%;
+        /* lo quiero grande -no 0 , lo quiero que se haga pequenio -si - 1 , y el tam*/
+        flex: 0 1 180px;
+    }
+        /*----------------------------------*/
+        /*ESTILOS POPUP CERRAR SESIÓN*/
+        /*----------------------------------*/
+        .cerrarSesionPopUp {
+            width: 300px;
+            height: 12rem;
+            padding-top: 50px;
+            border-radius: 10px;
+            border: #892260 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: white;
+        }
+        #cerrarsesion{
+            background: none;
+            border: none;
+        }
+
+        .botonesCierre {
+            display: flex;
+            justify-content: center;
+        }
+        .cerrarBoton {
+            width: 109px;
+            height: 35px;
+            margin: 15px 13px 20px 13px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #892260;
+        }
+        /*ESTILOS BLOQUE FOOTER*/
+        .PiePagina {
+            background-color: #682155;
+            font-family: Ebrima;
+            font-size: 12px;
+            color: white;
+            border: 0;
+            display: flex;
+            width: 100%;
+            height: 63px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+            min-width: 356px;
+            margin-top: 45px;
+        }
+
+    /*ESTILOS PÁGINA ADMIN*/
+    /*ESTILOS BOTÓN NOTIFICACIONES*/
+/*Contendor de cerrar y icono*/
+.notisycerrar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+}
+
+.notificaciones_container {
+    margin-top:3px;
+}
+.notificaciones {
+    border: 0 solid;
+    background: white;
+    height: 36px;
+    margin-right: 20px;
+    margin-top: 2px;
+}
+/*ESTILOS ICONO NOTIFICACIONES*/
+.notisycerrar .notificaciones i {
+    font-size: 35px; /* Ajusta el tamaño del icono a tu preferencia */
+    color: var(--titulos);
+}
+/*ESTILOS BOTÓN CERRAR SESIÓN*/
+.boton-cerrarsesion {
+    width: 110px;
+    height: 36px;
+    border: 1px solid #892260;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    font-family: "Codec Pro";
+    font-size: 12px;
+    text-align: center;
+    line-height: 36px;
+    padding-right: 10px;
+    margin-right: 16px;
+    margin-left: 0px;
+}  /* estilos del boton de cerrar sesion de todas las paginas */
+        /*--------------------------*/
+        /*ESTILOS BLOQUE POPUP NOTIS*/
+        /*--------------------------*/
+
+        .notif {
+            background: var(--titulos);
+            padding: 0;
+            border: #333333 1px solid;
+            border-radius: 20px;
+            height: 80px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .popuppreferencias {
+            width: 300px;
+            height: 250px;
+            border-radius: 10px;
+            border: var(--corporativo) 1px solid;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            padding-top: 20px;
+        }
+        .popuppreferenciashijos {
+            width: 300px;
+            height: 240px;
+            border-radius: 10px;
+            border: var(--cooperativo_segundario) 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 30px;
+        }
+        .cerrarpopup {
+            border: var(--cooperativo_segundario) 1px solid;
+            border-radius: 5px;
+            color: var(--cooperativo_segundario);
+            font-family: "Codec Pro", sans-serif;
+            background: var(--blanco);
+            font-size: 20px;
+            align-self: flex-end;
+            justify-self: flex-start;
+            margin-bottom: 15px;
+        }
+        .popupnotificaciones {
+            height: 535px;
+            width: 400px;
+            background: var(--verde_secundario);
+            padding-top: 10px;
+            border-radius: 20px;
+            border: 1px solid var(--titulos);
+        }
+        .arribanotis {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 16px;
+        }
+        .cerrarnotis {
+            background: var(--titulos);
+            color: var(--blanco);
+            border: #333333 1px solid;
+            border-radius: 5px;
+            height: 2.2rem;
+            width: 2.2rem;
+        }
+        .pnotif {
+            margin-left: 10px;
+            font-size: 13px;
+            margin-right: 10px;
+        }
+
+    /*ESTILOS CABECERA TABLA*/
+    .cabeceraTabla{
+        background-color: var(--titulos);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    /*ESTILOS CONTENEDOR SUPERIOR*/
+    .contenedorSuperior{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0 -10px 0;
+    }
+    .contenedorSuperior h2 {
+        text-align: justify;
+        font-family: "Codec Pro", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        color: var(--blanco);
+    }
+    .rol {
+        font-size: 1rem;
+        width: 12rem;
+        border: 0;
+        background: #ecebeb;
+        color: var(--text);
+        text-align: center;
+        outline: 0;
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+
+    /*ESTILOS CONTENEDOR MEDIO*/
+    .contenedorMedio {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+    .buscadorAdmin {
+        background: var(--blanco);
+        border: 0;
+        border-radius: 1rem 0 0 1rem;
+        width: 50%;
+        height: 1.5rem;
+        text-indent: 50px;
+        font-size: 16px;
+    }
+    .boton-lupa{
+        background: #ecebeb;
+        border: 0;
+        border-radius: 0 1rem 1rem 0;
+        width: 10%;
+        height: 1.5rem;
+        font-size: 1rem;
+        color: #000;
+    }
+    /*FIN ESTILOS Cabecera Tabla*/
+
+    /*ESTILOS BLOQUE TABLA ADMIN*/
+        /*Estilos Interruptores*/
+        .toggle input[type=checkbox]{
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+
+        .toggle label{
+            cursor: pointer;
+            text-indent: -9999px;
+            width: 30px;
+            height: 15px;
+            background: #8f1919;
+            display: block;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .toggle label:after{
+            content: '';
+            position: absolute;
+            top: 0.75px;
+            left: 0.75px;
+            width: 13.5px;
+            height: 13.5px;
+            background: #fff;
+            border-radius: 13.5px;
+            transition: .3s;
+        }
+
+        .toggle input:checked + label{
+            background: var(--verde_secundario);
+
+        }
+
+        .toggle input:checked + label:after{
+            left: calc(100% - 0.75px);
+            transform: translateX(-100%);
+        }
+
+        .toggle label:hover:after{
+            width: 15px;
+        }
+
+        /*FIN Estilos Interruptores*/
+
+        /*Estilos Botón Añadir en TH*/
+    .add-user {
+        text-decoration: none;
+        background: var(--cooperativo_segundario);
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        vertical-align: middle;
+        overflow: hidden;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.29);
+        border-bottom: solid 3px #4f1a41;
+        transition: .4s;
+    }
+            /*--------------------------*/
+            /*ESTILOS  POPUP ANYADIR*/
+            /*--------------------------*/
+
+            .popupanyadir {
+                height: 30rem;
+                width: 20rem;
+                background: var(--verde_secundario);
+                padding-top: 1.25rem;
+                border-radius: 20px;
+                border: 1px solid var(--titulos);
+                display: grid;
+                justify-content: center;
+            }
+
+            #popupanyadir{
+                background: none;
+                border: none;
+            }
+            .cabeceraAnyadir{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                margin-bottom: 1rem;
+                margin-top: -30px;
+                justify-content: space-between;
+            }
+            .cabeceraAnyadir h4 {
+                font-family: "Codec Pro", sans-serif;
+                font-weight: normal;
+                font-size: 18px;
+                color: white;
+                margin: 0;
+            }
+            .cabeceraAnyadir button {
+                background: #1d4332;
+                color: white;
+                border: #333333 1px solid;
+                border-radius: 5px;
+                height: 2rem;
+                width: 2rem;
+            }
+            .popupanyadir .datosAnyadir div{
+                margin: 20px 0 0 0;
+            }
+            .popupanyadir select{
+                border-radius: 20px 20px 20px 20px;
+                text-align: center;
+                width: 280px;
+            }
+            .popupanyadir input{
+                border-radius: 20px 20px 20px 20px;
+                width: 280px;
+                padding-left: .7rem;
+            }
+
+            .popupanyadir p {
+                margin-left: 10px;
+                font-size: 13px;
+                margin-right: 10px;
+                margin-bottom: 5px;
+            }
+            .popupanyadir .botonAceptar{
+                width: 7.5rem;
+                height: 2.5rem;
+                border: 1px solid #892260;
+                color: black;
+                background-color: white;
+                border-radius: 10px;
+                font-family: "Codec Pro", sans-serif;
+                font-size: 12px;
+                text-align: center;
+                line-height: 36px;
+                margin: 0.5rem auto 0 auto;
+
+            }
+    /*Fin Estilos Botón Añadir en TH*/
+    .contenedorTabla {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .tablaAdmin {
+        background-color: white;
+        text-align: center;
+        border-collapse: collapse;
+        font-family: "Assistant", sans-serif;
+    }
+    .tablaAdmin td {
+        padding: 5px;
+        position: relative;
+        border-bottom: 1px solid #c4c4c4;
+    }
+    .tablaAdmin th{
+        color: white;
+        background-color: var(--titulos);
+        padding: 5px;
+    }
+    #tablaAdministradores{
+        display: none;
+    }
+    #tablaComerciales{
+        display: none;
+    }
+    #tablaTecnicos{
+        display: none;
+    }
+/*APARTADO RESPONSIVE*/
+@media(max-width: 700px){
+    .popupnotificaciones {
+        height: 435px;
+        width: 300px;
+    }
+    .cerrarnotis {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    .arribanotis {
+        margin-top: 10px;
+    }
+}
+@media(min-width: 600px){
+
+    .cabeceraTabla{
+        margin: 30px auto 0 auto;
+        max-width: 75%;
+        border-radius: 20px 20px 0 0;
+    }
+    .contenedorTabla{
+        max-width: 75%;
+        margin: 0 auto 0 auto;
+        border-radius: 0 0 20px 20px;
+    }
+}
+@media(min-width: 1300px){
+    .popupnotificaciones {
+        height: 635px;
+        width: 500px;
+        background: var(--verde_secundario);
+        padding-top: 10px;
+        border-radius: 20px;
+        border: 1px solid var(--titulos);
+    }
+    .cerrarnotis {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .arribanotis {
+     margin-top: 16px;
+    }
+    .h4 {
+        margin-bottom: 0.9rem;
+        margin-top: 10px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    .h5 {
+        font-size: 17px;
+    }
+    .notif {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /*el pop up de selecionar rol*/
+    .popupanyadir {
+        height: 40rem;
+        width: 30rem;
+    }
+    .cabeceraAnyadir {
+        margin-top: -70px;
+        margin-bottom: 90px;
+    }
+    .cabeceraAnyadir h4 {
+        font-size: 22px;
+        padding-left: 30px;
+    }
+    .datosAnyadir{
+        padding-top: -100px;
+    }
+    .popupanyadir select {
+        width: 380px;
+        margin-left: 30px;
+    }
+    .popupanyadir input {
+        width: 380px;
+        margin-left: 30px;
+    }
+    .popupanyadir p {
+        margin-left: 40px;
+        font-size: 17px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .popupanyadir .botonAceptar {
+        width: 7.9rem;
+        height: 2.9rem;
+    }
+}
+

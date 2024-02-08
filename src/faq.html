@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!---------Enlace Boostrap Iconos--------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!---------Enlace estilos-------->
+    <link rel="stylesheet" href="css/seccionesLanding.css">
+    <!---------Enlace estilos menu-------->
+    <link rel="stylesheet" href="css/burgerMenu.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+
+<body>
+<!----------------------------------------->
+<!---------Inicio seccion cabecera--------->
+<!----------------------------------------->
+<header>
+    <nav id="menu-principal">
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="img/logo.jpeg" alt="Imagen_logo" id="imagen_logo"></a>
+        </div>
+
+        <ul  class="opciones_menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="hidroponia.html">Hidroponia</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li class="active"><a href="faq.html">FAQ</a></li>
+            <li><a href="formulario.html">Contacta</a></li>
+
+
+        </ul>
+        <a class="user_icono" href="inicioSesion.html">
+            <i class="bi bi-person-circle" id="imagen_user"></i>
+        </a>
+        <div class="hamburguesa">
+            <i class="bi bi-list"></i>
+        </div>
+    </nav>
+</header>
+<!----------------------------------------->
+<!---------Fin seccion cabecera------------>
+<!----------------------------------------->
+
+<!----------------------------------------->
+<!---------Inicio preguntas frecuentes----->
+<!----------------------------------------->
+
+<div class="faq">
+    <h2>Preguntas habituales</h2>
+    <div class="contenedor_faq">
+
+        <!----------------------------->
+        <!-------Aqui va general------->
+        <!----------------------------->
+        <h3>General</h3>
+        <div class="envoltura_faq">
+            <button class="toggle">¿Tengo que regar las plantas?<i class="fas fa-plus icon"></i></button>
+            <div class="contenido_faq">
+                <p> En un huerto hidropónico, no necesitas regar las plantas manualmente. El agua
+                    y nutrientes se suministran directamente a las raíces a través de un sistema automatizado
+                    de riego</p>
+            </div>
+        </div>
+        <div class="envoltura_faq">
+            <button class="toggle">¿Cómo me creo una cuenta?<i class="fas fa-plus icon"></i></button>
+            <div class="contenido_faq">
+                <p>Las cuentas no se pueden crear, al contactar con nosotros y llevar a cabo un huerto, nosotros
+                    nos encargamos de la creación de este y se lo damos.</p>
+            </div>
+        </div>
+        <!----------------------------->
+        <!-------Aqui va pago---------->
+        <!----------------------------->
+        <h3>Pago</h3>
+        <div class="envoltura_faq">
+            <button class="toggle">¿Es un único pago?<i class="fas fa-plus icon"></i></button>
+            <div class="contenido_faq">
+                <p>Sí, al contactar con nosotros le solicitamos medidas de las instalaciones y nosotros le comunicamos
+                    un precio final acorde.</p>
+            </div>
+        </div>
+
+        <!----------------------------->
+        <!-------Aqui va Cuenta-------->
+        <!----------------------------->
+        <h3>Cuenta</h3>
+        <div class="envoltura_faq">
+            <button class="toggle">¿Cómo puedo darme de baja?<i class="fas fa-plus icon"></i></button>
+            <div class="contenido_faq">
+                <p>¡En GTI tenemos todo pensado! Dispone de un botón al iniciar sesión que se encarga de avisarnos y le
+                    reenviamos un correo con la contraseña asociada a su usuario.</p>
+            </div>
+        </div>
+        <!------------------------------------->
+        <!-------Aqui va Soporte Tecnico------->
+        <!------------------------------------->
+
+        <h3>Soporte Técnico</h3>
+        <div class="envoltura_faq">
+            <button class="toggle">¿Cuanto tarda la instalación?<i class="fas fa-plus icon"></i></button>
+            <div class="contenido_faq">
+                <p> Nuestras instalaciones dependen sobretodo del tamaño de estas. Si es un hogar aproximamos un día entero para
+                    la instalación y si no, se lo comunicamos previamente.</p>
+            </div>
+        </div>
+        <div class="envoltura_faq">
+            <button class="toggle">¿Qué ocurre si hay una avería?<i class="fas fa-plus icon"></i></button>
+            <div class="contenido_faq">
+                <p>Es nuestro deber mantener su huerto activo, es por ello que nos encargaremos personalmente de mandar un
+                    técnico
+                    a su hogar lo más pronto posible, de esta forma, podrá continuar con su agrícultura sin sufrir pérdidas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------------------------------->
+<!------ Inicio va el footer-------->
+<!------------------------------->
+<section class="footer1" id="footersin">
+    <p>&#169 Copyright 2023 All Rights Reserved</p>
+</section>
+<!-------------------------------->
+<!------ Fin  footer-------------->
+<!------------------------------->
+
+<!------ Aqui van los scrips------>
+<script src="js/faq.js" defer></script>
+<script src="js/menuDesplegable.js" defer></script>
+
+</body>
+</html>

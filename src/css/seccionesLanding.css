@@ -1,0 +1,866 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&family=Ruda:wght@500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/codec-pro');
+
+:root {/*variables de tipo estilo*/
+    --cooperativo_segundario: #682155;
+    --corporativo: #820053;
+    --verde_secundario: #40916c;
+    --titulos: #2d6a4f;
+    --blanco: #ffffff;
+    --text: #111111;
+    --menu-height: 3rem;
+}
+
+/* Estilos para h1 */
+h1 {
+    font-size: 48px;
+    /* Otros estilos para h1 */
+}
+/* Estilos para h2 */
+h2 {
+    color: var(--titulos);
+    font-size: 30px;
+    font-family: "Codec Pro Bold", "Codec Pro", sans-serif;
+    text-align: center;
+    text-decoration: underline var(--corporativo) 2px;
+    text-underline-offset: 8px;
+    /* Otros estilos para h2 */
+    font-weight: 700;
+    line-height: normal;
+}
+
+/**********************************************************/
+/*****************Incio estilos Hidroponia******************/
+/**********************************************************/
+
+/*****************Aqui van los estilos de que es la hidroponia******************/
+.explicacion_ejemplo {
+    align-items: center;
+    padding-right: 45px;
+    padding-left:  45px;
+}
+/*el titulo*/
+.explicacion_ejemplo h2 {
+    margin-bottom: 30px;
+    margin-top: 90px;
+}
+/*estilos contenedor paragrafo y img*/
+.explicacion_ejemplo .contenido {
+    justify-content: center;/* alinea horizontalmente el contenido*/
+    margin: 40px 30px 20px 20px;
+    display: flex;
+    font-family: "Assistant", sans-serif;
+}
+.paragrafo_contenido{
+    flex: 1 1 0px;
+}
+.paragrafo_contenido p {
+    font-size: 20px;
+    font-family: "Assistant", sans-serif;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.explicacion_ejemplo img {
+    max-width: 100%;
+    width: 473px;
+    height: 258px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px;
+}
+/**********************Ventajas de los huertos hidroponicos****************************/
+.contenedor_ventajas{
+    padding: 30px;
+    align-items: flex-start;
+    text-align: center;
+}
+/****** contenido img,h4 y p a la izquierda ****/
+.ventaja1,
+.ventaja3{
+    display: flex;
+    margin-top: 20px;
+    flex: 1 1 0px;
+    align-items: center;
+    float: left;
+    padding: 30px;
+}
+/****** contenido img,h4 y p a la derecha ****/
+.ventaja2,
+.ventaja4 {
+    display: flex;
+    margin-top: 20px;
+    flex: 1 1 0px;
+    align-items:center;
+    float: right;
+    padding: 30px;
+}
+.ventaja1 img,
+.ventaja2 img,
+.ventaja3 img,
+.ventaja4 img{
+    width: 125px;
+    height: 125px;
+    border-radius: 63px;
+    box-sizing: border-box;
+    margin-right: 30px;
+}
+.ventaja1 h4,
+.ventaja2 h4,
+.ventaja3 h4,
+.ventaja4 h4{
+    width: 428px;
+    height: 32px;
+    box-sizing: border-box;
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+    font-weight: 700;
+    color: var(--corporativo);
+    text-align: left;
+    line-height: normal;
+    font-size: 20px;
+
+}
+.ventaja1 p,
+.ventaja2 p,
+.ventaja3 p,
+.ventaja4 p {
+    width: 477px;
+    height: 161px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: normal;
+    font-family: "Assistant", sans-serif;
+    font-size: 18px;
+}
+/*********************Responsive ventajas y exlicacion****************************/
+@media (min-width: 1900px) {
+    .ventaja1,
+    .ventaja3 {
+        margin-left: 100px;
+    }
+    .ventaja2,
+    .ventaja4 {
+        margin-right: 100px;
+    }
+    .paragrafo_contenido p{
+        width: 80%;
+        margin-left: 150px;
+        margin-bottom: 10px;
+    }
+    .explicacion_ejemplo img {
+        margin-right: 100px;
+    }
+}
+@media (min-width: 2200px) {
+    .ventaja1,
+    .ventaja3 {
+        margin-left: 150px;
+    }
+    .ventaja2,
+    .ventaja4 {
+        margin-right: 150px;
+    }
+}
+
+@media (max-width: 1200px){
+    .explicacion_ejemplo {
+        padding-right: 25px;
+        padding-left:  25px;
+    }
+    .contenido {
+        flex-direction: column;
+    }
+    .paragrafo_contenido p {
+        margin-bottom: 30px;
+    }
+    .image-contenido img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 1400px) {
+    .ventajas {
+        float: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .ventaja1,
+    .ventaja3{
+        align-items: center;
+        float: none;
+        padding: 20px;
+        display: flex;
+    }
+    .ventaja2,
+    .ventaja4 {
+        align-items:center;
+        float: none;
+        padding: 20px;
+        display: flex;
+    }
+    .ventaja1 img,
+    .ventaja2 img,
+    .ventaja3 img,
+    .ventaja4 img{
+        display: flex;
+        justify-content: center;
+    }
+    .ventajas-content p{
+        display: flex;
+        justify-content: center;
+    }
+    .ventajas-content h4{
+        display: flex;
+        text-align: left;
+    }
+}
+@media (max-width: 700px) {
+    .ventajas {
+        float: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .ventaja1,
+    .ventaja3{
+        align-items: center;
+        float: none;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .ventaja2,
+    .ventaja4 {
+        align-items:center;
+        float: none;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .ventaja1 img,
+    .ventaja2 img,
+    .ventaja3 img,
+    .ventaja4 img{
+        display: flex;
+        justify-content: center;
+    }
+    .ventajas-content p{
+        display:none;
+    }
+    .ventajas-content h4{
+        display: flex;
+        justify-content: center;
+    }
+}
+/**********************************************************/
+/*****************Fin estilos Hidroponia******************/
+/**********************************************************/
+
+/**********************************************************/
+/***************+**Inicio estilos Nosotros*****************/
+/**********************************************************/
+.Nosotros_Descripción{
+    align-items: center;
+    margin-top: 100px;
+}
+.Nosotros_Descripción h2{
+    margin-bottom: 30px;
+    margin-top: 90px;
+}
+.Vision_de_la_empresa h2,
+.Por_que_elegirnos h2{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+/*contenedor los dos p y la img*/
+.nosotros_contenido {
+    display: flex;
+    justify-content: center;
+    font-family: "Assistant", sans-serif;
+    margin-left: 20px;
+    flex: 1 1 0px;
+}
+.paragrafo_contenido_nosotros{
+    flex: 1 1 0px;
+    font-size: 20px;
+    padding: 10px;
+}
+.Nosotros_Descripción  img,
+.Vision_de_la_empresa img{
+    max-width: 100%;
+    width: 499px;
+    height: 318px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-right: 20px;
+}
+/*Aqui van los estilos del apartado Por que elegirnos */
+.Por_que_elegirnos{
+    align-items: center;
+}
+.paragrafo_contenido_porque{
+    display: none;
+}
+/*estilos del contenedor de todas las img y texto*/
+.contenedor_porque_elegirnos{
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.elegirnos2,
+.elegirnos1{
+    margin: 100px;
+}
+.elegirnos1 {
+    display: flex;
+    margin-top: 20px;
+    flex: 1 1 0px;
+    align-items: center;
+    float: left;
+}
+.elegirnos2{
+    display: flex;
+    margin-top: 20px;
+    flex: 1 1 0px;
+    align-items: center;
+    float: left;
+}
+.elegirnos1 img,
+.elegirnos2 img{
+    width: 225px;
+    height: 225px;
+    box-sizing: border-box;
+    flex: 0 1 0;
+
+}
+/*estilos de H3 */
+.Elejirnos-content{
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+    font-weight: 700;
+    text-align: left;
+    line-height: normal;
+    display: flex;
+}
+/* medias , qui empiezan los estilos que hacen la pagina responsive*/
+
+@media (min-width: 1700px) {
+    .Nosotros_Descripción{
+        margin:  0 200px;
+    }
+.Vision_de_la_empresa{
+    margin:  0 200px;
+}
+    .elegirnos1{
+        margin-left: 100px;
+    }
+    .elegirnos2{
+        margin-right: 100px;
+    }
+}
+@media (max-width: 1200px){
+    .nosotros_contenido{
+        flex-direction: column;
+    }
+    .Nosotros_Descripción h2,
+    .Vision_de_la_empresa h2,
+    .Por_que_elegirnos h2{
+        margin-top: 10px;
+    }
+    .paragrafo_contenido_porque,
+    .paragrafo_contenido_nosotros {
+        max-width: 100%;
+    }
+    .image-contenido-nosotros img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    .container_contenido_porque_elegirnos {
+        flex-direction: column;
+        margin-left: 0px;
+    }
+  .elegirnos1,
+  .elegirnos2{
+      margin-top: 5px;
+  }
+    .elegirnos1 img,
+    .elegirnos2 img {
+        display: block;
+        margin: 0 auto;
+    }
+    .Elejirnos-content{
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px){
+    .paragrafo_contenido_porque,
+    .paragrafo_contenido_nosotros {
+        max-width: 90%;
+        font-size: 17px;
+    }
+
+}
+@media (max-width: 600px){
+    .paragrafo_contenido_porque,
+    .paragrafo_contenido_nosotros {
+        max-width: 90%;
+        font-size: 17px;
+    }
+    .image-contenido-nosotros img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-right: 0px;
+    }
+    .elegirnos1,
+    .elegirnos2{
+        align-items:center;
+        float: none;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        margin-top: -50px;
+    }
+    .Elejirnos-content{
+        width: 100%;
+       justify-content: center;
+    }
+    .Elejirnos-content h3{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/**********************************************************/
+/*******************Fin estilos nosotros*******************/
+/**********************************************************/
+
+/**********************************************************/
+/*******************Inicio estilos servicios*******************/
+/**********************************************************/
+.Servicios_de_empresa{
+    margin-top: 90px;
+    flex-direction: column;
+}
+.Servicios{
+   /* width: 80%;*/
+    justify-content: center;
+    margin-left: 130px;
+    margin-right: 130px;
+}
+.Servicios div{
+    display: flex;
+    margin-block: 1rem auto;
+    align-items: center;
+    border-bottom:var(--corporativo) 1px solid;
+    margin-inline: 0;
+}
+.Servicios h3{
+    display: flex;
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: var(--corporativo);
+    text-align: left;
+    margin-left: 20px;
+    width: 428px;
+    height: 32px;
+    order:2;
+
+}
+.Servicios img{
+    display: flex;
+    padding: 20px;
+    width: 130px; /* Ajusta el ancho de la foto */
+    height: 130px;
+    order: 1;
+}
+/*aqui va el apartdo Nuestra galeria*/
+.Nuestra_galería{
+    margin-top: 30px;
+}
+.Nuestra_galería h2{
+    margin-bottom: 30px;
+}
+.contenedor_galeria{
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+.huerto_interior,
+.huerto_exterior{
+    margin: 30px;
+}
+/*Las dos imagenes de huerto*/
+.huerto_interior img,
+.huerto_exterior img{
+    width: 470px;/*ajusrando el tam de imagen*/
+    height: 456px;
+    margin-bottom: -20px;
+    flex: 0 1 0;
+}
+/*contenedor h4 y p de la galeria*/
+.contenido_galeria {
+    width: 470px;
+    min-height: 130px;
+    border: 0px solid black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-inline: 10px;
+}
+.contenido_galeria h4 {
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--corporativo);
+    text-align: center;
+    margin-top: -20px;
+}
+.contenido_galeria p {
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text);
+    text-align: center;
+    margin-top: 10px;
+}
+@media (max-width: 1200px) {
+    .Servicios {
+        width: 60%; /* Ajusta el ancho de acuerdo a tus necesidades */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Servicios h3 {
+        font-size: 18px; /* Ajusta el tamaño de fuente de acuerdo a tus necesidades */
+        width: auto; /* Permite que el ancho se ajuste automáticamente */
+    }
+    .Servicios img {
+        width: 100px; /* Ajusta el ancho de la imagen de acuerdo a tus necesidades */
+        height: 100px; /* Ajusta la altura de la imagen de acuerdo a tus necesidades */
+    }
+    .Servicios div {
+        border-bottom: var(--corporativo) 1px solid;
+    }
+    .contenedor_galeria {
+        flex-direction: column; /* Cambiar a una columna en dispositivos más pequeños */
+        align-items: center; /* Centrar verticalmente */
+        width: 100%;
+    }
+    .huerto_interior,
+    .huerto_exterior{
+        display: flex;
+        flex-direction: column;
+        margin-bottom:30px ;
+        align-items: center;
+    }
+    .huerto_interior img,
+    .huerto_exterior img{
+        width: 50%;/*ajusrando el tam de imagen*/
+        height:50%;
+    }
+    .contenido_galeria {
+        width: 50%;
+    }
+}
+@media (max-width: 900px) {
+    .Servicios{
+        width: 70%;
+        margin-left: 100px;
+        margin-right: 0px;
+    }
+}
+@media (max-width: 800px){
+    .huerto_interior img,
+    .huerto_exterior img{
+        width: 70%;/*ajusrando el tam de imagen*/
+        height:70%;
+        margin-bottom: .3rem;
+    }
+    .contenido_galeria{
+       width: 70%;
+    }
+    .contenido_galeria h4{
+        font-size: 20px;
+    }
+    .contenido_galeria p {
+        font-size: 17px;
+    }
+}
+@media (max-width: 700px) {
+    .Servicios{
+        width: 90%;
+        margin-left: 20px;
+        margin-right: 0px;
+    }
+}
+@media (max-width: 500px){
+    .huerto_interior img,
+    .huerto_exterior img{
+        width: 90%;/*ajusrando el tam de imagen*/
+        height:90%;
+    }
+    .contenido_galeria {
+        width: 90%;
+    }
+    .contenido_galeria p {
+        font-size: 15px;
+    }
+}
+/**********************************************************/
+/****************** FIN estilos servicios*******************/
+/**********************************************************/
+
+/**********************************************************/
+/*******************Inicio estilos FAQ******************/
+/**********************************************************/
+.faq {
+    padding: 0 3rem 3rem 3rem;
+}
+
+.faq h2{
+    margin-top: 100px;
+    text-align: center;
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+    color: #2d6a4f;
+}
+.contenedor_faq {
+    padding: 10px;
+    width: 100%;
+}
+.contenedor_faq h3{
+    font-family:"Assistant Bold", "Assistant", sans-serif;
+    color: #2d6a4f;
+}
+.envoltura_faq {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 15px gray;
+}
+
+.toggle,
+.contenido_faq {
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+}
+.toggle {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 16px;
+    color: var(--text);
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 0;
+}
+.contenido_faq {
+    position: relative;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 25px;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    font-family: "Assistant", sans-serif;
+    color: #1b4332;
+}
+@media (max-width: 900px) {
+    .faq{
+        padding-top: 44px;
+    }
+    .faq h2 {
+        font-size: 26px;
+        margin-top: 50px;
+    }
+    .contenedor_faq h3{
+        font-size: 20px;
+        font-family:"Assistant Bold", "Assistant", sans-serif;
+    }
+
+}
+/**********************************************************/
+/*******************Fin estilos FAQ************************/
+/**********************************************************/
+
+/**********************************************************/
+/*****************Inicio estilos formulario****************/
+/**********************************************************/
+
+.Formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 65px;
+}
+.Formulario h1{
+     color: var(--text);
+     font-weight: normal;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     font-size: 25px;
+     font-family: "Codec Pro Bold", "Codec Pro", sans-serif;
+     text-align: center;
+     text-decoration: underline var(--corporativo) 2px;
+     text-underline-offset: 8px;
+     line-height: normal;
+ }
+.Formulario h3{
+    font-family: "Assistant Bold", "Assistant", sans-serif;
+    font-size: 18px;
+    color: #797979;
+    font-weight: normal;
+    padding-top: 10px;
+    margin-bottom: 5px;
+
+}
+.Formulario input{
+    border: #820053 solid 1px;
+    border-radius: 10px;
+    width: 334px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.Formulario textarea {
+    border: #820053 solid 1px;
+    border-radius: 10px;
+}
+
+.botonformulario {
+    display: flex;
+}
+
+/*aqui esta el boton enviar */
+#boton_formulario{
+    height: 53px;
+    width: 185px;
+    margin: auto;
+    margin-top: 28px;
+    font-family: Assistant;
+    font-size: 18px;
+    background-color: #892260;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#boton_formulario:hover {
+    background-color: var(--cooperativo_segundario); /* Cambia el color hacer hover */
+}
+
+#boton_formulario:active {
+    background-color: var(--cooperativo_segundario); /* Cambia el color a un tono más oscuro al hacer click */
+}
+/* Informaciion adicional rectangulo*/
+#ad-info{
+    height: 152px;
+    width: 334px;
+    box-sizing: border-box;
+    resize: none;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.submitformulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 1600px) {
+  .Formulario{
+      margin-top: 200px;
+  }
+
+}
+@media (min-width: 1600px) {
+    .Formulario{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .Formulario h1{
+        font-size: 30px;
+    }
+    .Formulario h3{
+        font-size: 22px;
+    }
+    .Formulario input{
+        width: 434px;
+        height: 55px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    #ad-info{
+        height: 252px;
+        width: 434px;
+        box-sizing: border-box;
+        resize: none;
+        text-align: start;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 20px;
+    }
+
+}
+@media (max-width: 700px) {
+    .Formulario h3{
+        font-size: 17px;
+    }
+
+    .Formulario input{
+        border: #820053 solid 1px;
+        border-radius: 10px;
+        width: 274px;
+        height: 45px;
+        margin-bottom: 8px;
+    }
+    #ad-info{
+        height: 152px;
+        width: 274px;
+        box-sizing: border-box;
+        resize: none;
+        text-align: start;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+
+/**********************************************************/
+/*******************Fin estilos formulario*****************/
+/**********************************************************/
+
+

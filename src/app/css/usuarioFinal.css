@@ -1,0 +1,497 @@
+/*---------------------------------------------------------- */
+/* inicio de estilos de header de usuarios */
+/*------------------------------------------------------------ */
+
+.selectorDesktop {
+    display: none;
+    margin-right: 0;
+}
+
+.notisycerrar {
+    display: flex;
+    flex-direction: row;
+} /* estilos del contenedor que contiene el boton de cerrar
+  sesion y ademas el boton de notificaciones si el usuario
+  lo requiere*/
+
+.notificaciones {
+    border: 0px solid;
+    background: white;
+    height: 36px;
+    margin-right: 20px;
+    margin-top: 2px;
+}
+
+.bi::before {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #2d6a4f;
+}
+/*------------------------------------------ */
+/*      fin de estilos header de usuarios      */
+/*------------------------------------------- */
+
+/*------------------------------------------ */
+/* inicio de estilos de usuario final*/
+/*------------------------------------------ */
+h2 {
+    font-family: "Assistant";
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+}  /* estilos de los headings 2 del usuario final */
+
+.Seccion_Intermedia{
+    display: grid;
+    align-items: center;
+    margin-bottom: 20px;
+}  /* estilos del contenedor que contiene el mensaje de bienvenida, el select de huertos
+y el boton de ajustes del huerto*/
+
+.selectorMovil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+
+/*aqui va el @media para mostrar el selector de huerto en la cabecera en la vista de desktop*/
+
+@media (min-width: 1160px) {
+    .selectorMovil {
+        display: none;
+    } /*oculta el selector y la bienvenida de la seccion intermedia para mostrarlo en la cabecera*/
+
+    .selectorDesktop {
+        display: flex;
+        align-items: baseline;
+        width: 1150px;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
+
+    .Greeting {
+        justify-self: flex-start;
+        font-size: 18px;
+        font-weight: normal;
+    } /*para separar los elementos del div*/
+
+    .selectorDesktop div {
+        margin-left: 20px;
+    }
+}
+
+.Greeting{
+    font-family: Assistant;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333333;
+    justify-self: center;
+    margin-top: 15px;
+} /*estilos del mensaje de bienvenida*/
+
+.Mensaje{
+    font-size: 16px;
+    font-family: Assistant;
+    color: #333333;
+    justify-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+} /*estilos del mensaje de aqui esta su huerto*/
+
+.MenuDesplegableHuerto{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+} /*estilos del menu que desplega el huerto a elegir para monitorizar*/
+
+.Ajustes {
+    border: 0px solid;
+    background: white;
+    height: 36px;
+    width: 40px;
+    margin-top: 5px;
+}
+
+.Ajustes img {
+    height: 1.7rem;
+    margin-bottom: 8px;
+} /*estilos del tamanyo de la img del boton de ajustes*/
+
+.MenuDesplegableHuerto .huertos {
+    width: 301px;
+    height: 29px;
+    border-radius: 4px;
+    border: #40916C 2px solid;
+    margin-right: 10px;
+    font-family: 'codec pro';
+    color: #797979;
+} /*estilos del menu que desplega el huerto a elegir para monitorizar*/
+
+/*----------------------------*/
+    /*GRAFICAS DE SENSORES*/
+/*----------------------------*/
+
+.graficadeuf {
+    width: 348px;
+    margin: auto;
+} /*estilos del contenedor de las graficas*/
+
+.headergrafica {
+    background-color: #2d6a4f;
+    width: 340px;
+    height: 32px;
+    border: 1px #2d6a4f;
+    border-radius: 4px 4px 0px 0px;
+    padding: 21px 21px 15px 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grafica {
+    width: 340px;
+    height: 0px;
+    border: 1px #2d6a4f solid;
+    border-radius: 0px 0px 5px 5px;
+    margin-left: 0px;
+    margin-bottom: 40px;
+    padding: 40px 34px 228px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} /*estilos de los contenedores que contienen toda la informacion referente a las medidas
+del sensor especifico*/
+
+/*media del grid de cada contenedor de graficas y del tamaño de estos*/
+
+@media (max-width: 799px) {
+    .graficasysensores {
+        display: flex;
+        flex-direction: column;
+    } /*en movil se ven los cuadros ordenados verticalmente*/
+}
+
+@media (min-width: 800px) and (max-width: 1159px) {
+    .graficasysensores {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0px 30px 0px 30px;
+    } /*en tablet se ven dos cuadros horizontalmente y se salta de linea*/
+
+    .graficasysensores > :last-child {
+        justify-self: center;
+        grid-column: 1 / span 2;
+    } /* centra el último cuadro para que ocupe las dos columnas */
+}
+
+@media (min-width: 1160px) and (max-width: 1459px) {
+    .graficasysensores {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px; /* Espacio entre los cuadros */
+        align-items: center; /* Centra verticalmente los elementos */
+        padding: 0 40px 0 40px;
+    }
+
+    .graficasysensores > :nth-child(4),
+    .graficasysensores > :nth-child(5) {
+        grid-row-start: 2; /* Inicia en la segunda fila */
+        grid-row-end: 3; /* Termina en la tercera fila */
+    }
+
+    .graficasysensores > :nth-child(4) {
+        grid-column-start: 1; /* Inicia en la primera columna */
+        grid-column-end: 3; /* Termina en la tercera columna */
+    }
+
+    .graficasysensores > :nth-child(5) {
+        grid-column-start: 2; /* Inicia en la segunda columna */
+        grid-column-end: 4; /* Termina en la cuarta columna */
+    }
+}
+
+@media (min-width: 1460px) and (max-width: 2000px) {
+    .graficasysensores {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px; /* Espacio entre los cuadros */
+        align-items: center; /* Centra verticalmente los elementos */
+        padding: 0 40px 0 40px;
+        margin: 25px 0 100px 0;
+    }
+
+    .graficasysensores > :nth-child(4),
+    .graficasysensores > :nth-child(5) {
+        grid-row-start: 2; /* Inicia en la segunda fila */
+        grid-row-end: 3; /* Termina en la tercera fila */
+    }
+
+    .graficasysensores > :nth-child(4) {
+        grid-column-start: 1; /* Inicia en la primera columna */
+        grid-column-end: 3; /* Termina en la tercera columna */
+    }
+
+    .graficasysensores > :nth-child(5) {
+        grid-column-start: 2; /* Inicia en la segunda columna */
+        grid-column-end: 4; /* Termina en la cuarta columna */
+    }
+
+    .graficadeuf {
+        width: 450px;
+    } /*se hacen reajustes del tamaño de los contenedores para la vista mas grande*/
+
+    .headergrafica {
+        width: 390px;
+        height: 40px;
+        padding-left: 32px;
+        padding-right: 28px;
+    }
+
+    .grafica {
+        width: 390px;
+        height: 70px;
+    }
+
+    .mensaje {
+        padding: 20px;
+        padding-left: 50px;
+    }
+}
+
+.mensaje{
+    margin-left: -36px;
+    position: absolute;
+    align-self: baseline;
+    margin-top: 48px;
+    height: 162px;
+    width: 340px;
+} /*estilos de los contenedores de las graficas con las medidas
+de cada sensor*/
+
+h4 {
+    font-family: "Codec Pro";
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+} /*estilos de los heading4*/
+
+p {
+    font-family: "Codec Pro";
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+} /*estilos de los parrafos*/
+
+label {
+    font-family: Assistant;
+    font-size: 15px;
+    color: #2d6a4f;
+} /*estilos de los labels*/
+h1 {
+    font-family: "Codec Pro";
+    font-size: 48px;
+    color: #2d6a4f;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 5px;
+} /*estilos del headin 1*/
+
+.boton-calendario {
+    width: 80px;
+    height: 49px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #892260;
+    border-radius: 5px;
+    margin-left: 20px;
+} /*estilos del boton de calendario*/
+
+.boton-calendario .bi::before {
+    font-size: 2rem;
+    color: #820053;
+    line-height: 1.8rem;
+} /*tamanyo que ocupa el icono en el boton de calendario*/
+
+/*--------------------------------*/
+/*   inicio de css pop ups */
+/*---------------------------------*/
+
+.popupfiltrar {
+    width: 334px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Assistant;
+    font-size: 14px;
+    border: 1px solid #820053;
+    border-radius: 10px;
+    padding-top: 26px;
+    display: flex;
+} /* estilos del pop up filtrar, debido a que este es mas grande */
+
+h3 {
+    font-family: "Codec Pro";
+    font-size: 22px;
+    font-weight: normal;
+    color: #820053;
+    margin-top: 0px;
+    text-align: center;
+} /* estilos de los heading de importancia 3 */
+
+.inputpopup {
+    width: 240px;
+    height: 25px;
+    border: 1px solid #797979;
+    border-radius: 5px;
+    color: #797979;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+} /* estilos de los inputs en los pop ups */
+
+.inputpopuppequeño {
+    width: 84px;
+    height: 25px;
+    border: 1px solid #797979;
+    border-radius: 5px;
+    color: #797979;
+    margin: 0 15px 10px 15px;
+} /* estilos de los inputs de menor tamanyo en los pop ups */
+
+.botonespopup {
+    display: flex;
+    justify-content: center;
+} /* estilos del contenedor usado para los botones de los pop ups */
+
+.botonpopup {
+    width: 109px;
+    height: 35px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #892260;
+    margin: 15px 13px 20px 13px;
+} /* estilos de los botones de los pop ups */
+
+
+.desdeyhasta {
+    display: flex;
+    flex-direction: column;
+}  /* estilos de un contenedor invisible usado para poder poner en columnas los inputs desde y hasta */
+
+.cerrarsesionpopup {
+    width: 300px;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    border: #892260 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} /* estilos del pop up de cerrar sesion */
+
+.popuppreferencias {
+    width: 320px;
+    height: 290px;
+    border-radius: 10px;
+    border: #892260 1px solid;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0px;
+    padding-top: 20px;
+} /* estilos del pop up de preferencias */
+
+.popuppreferenciashijos {
+    width: 320px;
+    height: 290px;
+    border-radius: 10px;
+    border: #892260 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0px;
+    padding-top: 30px;
+} /* estilos de los pop up hijos de preferencias, diferenciado del padre para poder usar a los
+ hijos como referencia en el script y poder saber de que clase fue el ultimo pop up cerrado, de
+ tal manera que se puedan cerrar los hijos y tambien los padres luego
+
+ explicado mejor casi al final de la pagina de usuario final*/
+
+.cerrarpopup {
+    border: #892260 1px solid;
+    border-radius: 5px;
+    color: #892260;
+    font-family: "Codec Pro";
+    background: white;
+    font-size: 20px;
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin: 0 15px 15px 0;
+} /* estilos del boton de cerrar pop up, usado en preferencias y filtrar */
+
+.popupnotificaciones {
+    height: 440px;
+    width: 350px;
+    background: #40916C;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #2d6a4f;
+    display: flex;
+    flex-direction: column;
+} /* estilos del pop up de las notis */
+
+.arribanotis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+} /* estilos de la parte superior de las notis para ordenarla en fila */
+
+.cerrarnotis {
+    background: #1d4332;
+    color: white;
+    border: #333333 1px solid;
+    border-radius: 5px;
+    height: 1.5rem;
+    width: 1.5rem;
+} /* estilos del boton de cerrar (x) de las notificaciones */
+
+.notif {
+    background: #2d6a4f;
+    padding: 0px;
+    border: #333333 1px solid;
+    border-radius: 20px;
+    height: 80px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} /* estilos de notificaciones */
+
+h5 {
+    font-family: "Codec Pro";
+    font-size: 13px;
+    color: white;
+    margin: 0 10px 0 10px;
+} /* estilos de notis */
+
+.pnotif {
+    margin: 0 10px 0 10px;
+    font-size: 13px;
+}  /* estilos de los parrafos de las notificaciones */
+
+/*---------------------------------*/
+/* fin de css pop ups */
+/*---------------------------------*/
+

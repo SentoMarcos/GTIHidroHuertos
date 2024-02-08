@@ -1,0 +1,654 @@
+@charset "UTF-8";
+@import url(//db.onlinewebfonts.com/c/1ba82d324736a8a9d4327d482c4627c4?family=Ebrima);
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&family=Ruda:wght@500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/codec-pro');
+@import "fonts";
+
+/*-------ESTILOS GENERALES------*/
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    h2{
+        font-family: "Codec Pro";
+        font-size: 22px;
+        font-weight: normal;
+        color: #fff;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    h3 {
+        font-family: "Codec Pro";
+        font-size: 18px;
+        font-weight: normal;
+        color: #820053;
+        margin-top: 0;
+        text-align: center;
+    }
+    h5 {
+        font-family: "Codec Pro";
+        font-size: 13px;
+        color: white;
+        margin: 10px 0 0 10px;
+    }
+    p {
+        font-family: "Codec Pro";
+        font-size: 16px;
+        color: white;
+        font-weight: normal;
+    }
+    /*ESTILOS BOTÓN ADD*/
+    .add {
+        margin: auto;
+        text-decoration: none;
+        background: #682155;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        vertical-align: middle;
+        overflow: hidden;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.29);
+        border-bottom: solid 3px #4f1a41;
+        transition: .4s;
+    }
+    /*ESTILOS CONTENEDOR TABLA*/
+    .contenedorTabla {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .tablaTecnico {
+        background-color: white;
+        text-align: center;
+        border-collapse: collapse;
+        font-family: "Assistant";
+    }
+    .tablaTecnico td {
+        padding: 5px;
+        height: 2rem;
+        position: relative;
+        border-bottom: 1px solid #c4c4c4;
+    }
+    .tablaTecnico th{
+        color: white;
+        background-color: #2E6B50;
+        padding: 5px;
+    }
+    /*ESTILOS BLOQUE HEADER*/
+    .encabezado {
+        flex: 1 1 100%;
+        height: 65px;
+        display: flex;
+        border-bottom: 1px #797979 solid;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .encabezado img{
+        height: 4rem;
+        width: auto;
+        max-width: 100%;
+    }
+    .logo {
+        display: block;
+        height: 100%;
+        /* lo quiero grande -no 0 , lo quiero que se haga pequenio -si - 1 , y el tam*/
+        flex: 0 1 180px;
+    }
+
+/*Boton de cerrar sesion*/
+    .boton-cerrarsesion {
+        width: 110px;
+        height: 36px;
+        border: 1px solid #892260;
+        color: black;
+        background-color: white;
+        border-radius: 10px;
+        font-family: "Codec Pro", sans-serif;
+        font-size: 12px;
+        text-align: center;
+        line-height: 36px;
+        padding-right: 10px;
+        margin-right: 16px;
+        margin-left: 0;
+    }  /* estilos del boton de cerrar sesion de todas las paginas */
+
+    .boton-cerrarsesion:hover {
+        background-color: var(--cooperativo_segundario);
+        color: var(--blanco);
+    }
+        /*----------------------------------*/
+        /*ESTILOS POPUP CERRAR SESIÓN*/
+        /*----------------------------------*/
+        #cerrarsesion {
+            width: fit-content; /* Ajusta el ancho del diálogo según su contenido */
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid var(--corporativo);
+            border-radius: 10px;
+            overflow: hidden; /* Oculta la línea de desplazamiento horizontal si el contenido excede el ancho del rectángulo */
+        }
+        .cerrarsesionpopup h3{
+            margin-top: 10px;
+        }
+        /* estilos para los dos botones del pop up */
+        .botonespopup {
+            display: flex;
+            justify-content: center;
+        }
+        .botonpopup {
+            flex: 1; /* Ajusta el ancho de los botones para ocupar todo el espacio disponible */
+            height: 35px;
+            margin: 15px 13px 20px 13px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid var(--cooperativo_segundario);
+        }
+        .botonpopup:hover {
+            background-color: var(--cooperativo_segundario);
+            color: var(--blanco);
+        }
+
+    /*ESTILOS BLOQUE FOOTER*/
+    .PiePagina {
+        background-color: #682155;
+        font-family: Ebrima;
+        font-size: 12px;
+        color: white;
+        border: 0;
+        display: flex;
+        width: 100%;
+        height: 63px;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        min-width: 356px;
+    }
+
+/*--ESTILOS HOJA MENU--*/
+    /*ESTILOS CONTENEDOR SUPERIOR*/
+    .contenedorSuperiorMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+        background: #2E6B50;
+    }
+    .contenedorSuperiorMenu h2{
+        color: #fff;
+        margin-top: .7rem;
+    }
+    .contenedorSuperiorMenu .bloque-buscar{
+        flex-direction: row;
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+    .bloque-buscar input {
+        background: #fff;
+        border: 0;
+        border-radius: 1rem 0 0 1rem;
+        width: 80%;
+        height: 1.5rem;
+        text-indent: 50px;
+        font-size: 16px;
+        vertical-align: middle;
+    }
+    .bloque-buscar .boton-lupa{
+        background: #ecebeb;
+        border: 0;
+        border-radius: 0 1rem 1rem 0;
+        width: 20%;
+        height: 1.5rem;
+        font-size: 1rem;
+        color: #6e6e6e;
+        margin-left: -.5rem;
+        vertical-align: middle;
+    }
+    /*ESTILOS CONTENEDOR INFERIOR*/
+    .contenedorInferiorMenu{
+        background-color: #2E6B50;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 3rem;
+    }
+
+/*-------ESTILOS HOJA DATOS CLIENTE------*/
+    /*CONTENEDOR SUPERIOR*/
+    .contenedorSuperiorDatos{
+        display: flex;
+        margin:0 2rem 0 1rem;
+        align-items: center;
+    }
+    .contenedorSuperiorDatos div{
+        margin:0 15% 0 5%;
+    }
+    .contenedorSuperiorDatos .bi::before{
+        font-size: 20px;
+    }
+    .contenedorSuperiorDatos h2{
+        white-space: nowrap;
+        color: #000;
+    }
+
+/*ESTILOS GRAFICA CIRCULAR*/
+    .grafica {
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .grafica h2{
+        font-size: 1rem;
+        margin: 1rem;
+        overflow-wrap: break-word;
+        width: 40%;
+        text-align: center;
+    }
+    .grafica-aro {
+        position: relative;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        overflow: hidden;
+    }
+    .grafica-aro::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 50% 0 0 50%;
+        background-color: #fff;
+        border: 2rem solid #2E6B50;
+        transform-origin: right center;
+        transform: rotate(0deg);
+    }
+
+    .valor {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: #000000;
+    }
+    .grafica {
+        flex: 1;
+        display: flex;
+    }
+
+    canvas {
+        max-width: 300px;
+
+        margin-left: 50px;
+    }
+
+
+/*CONTENEDOR MEDIO - DATOS*/
+    .datos-cliente div{
+        display: flex;
+        align-items: center;
+        margin: 2rem;
+    }
+    .datos-cliente div h2{
+        color: #000;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    .datos-cliente div p{
+        color: #000;
+        font-size: 1.4rem;
+        margin: 0 0 0 1rem;
+    }
+    .datos-cliente .infoAdicional{
+        display: block;
+    }
+    .datos-cliente .infoAdicional h2{
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+    .datos-cliente .infoAdicional p{
+        width: 75%;
+    }
+    .botonesDatos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /*CONTENEDOR DE BOTONES*/
+    .botonesDatos button{
+        margin: 1.5rem;
+        color: #fff;
+        background: #2E6B50;
+        width: 30%;
+        height: 3rem;
+        font-size: 1.5rem;
+        border: #797979;
+        border-radius: 2rem;
+    }
+
+
+/*--------ESTILOS REGISTRO TECNICO--------*/
+    /*CONTENEDOR SUPERIOR REGISTRO*/
+    .contenedorSuperiorAgregarSensores{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #2E6B50;
+        width: 100%;
+    }
+
+        /*ICONO BACK*/
+        .contenedorSuperiorAgregarSensores div{
+            margin: 0 0 0 5%;
+        }
+        .contenedorSuperiorAgregarSensores .bi::before{
+            font-size: 20px;
+            color: #fff;
+        }
+        .contenedorSuperiorAgregarSensores h2{
+            color: #fff;
+            margin-top: .7rem;
+        }
+        /*BOTON ADD*/
+        .contenedorSuperiorAgregarSensores .add{
+            margin: 0 5% 0 0;
+        }
+
+    /*REGISTRO UTILZA LAS MISMAS PROPIEDADES*/
+    /*PARA LA TABLA QUE LA TABLA GENERAL*/
+
+    /*CONTENEDOR INFERIOR BOTONES*/
+    .contenedorInferiorAgregarSensor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 7rem;
+        background: #2E6B50;
+    }
+    .contenedorInferiorAgregarSensor button{
+        width: 50%;
+        margin: 2rem 0 2rem 0;
+        height: 4rem;
+        background: #fff;
+        color: #2E6B50;
+        font-weight: bold;
+        border: #797979;
+        border-radius: 2rem;
+    }
+
+/*--------ESTILOS TESTEO TECNICO--------*/
+    .contenedorSuperiorTest{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        background: #2E6B50;
+        color: #fff;
+    }
+    .contenedorSuperiorTest .bi::before{
+        font-size: 20px;
+        color: #fff;
+    }
+    .contenedorSuperiorTest div{
+        margin:0 37% 0 5%;  /*De esta forma, añado margen a la izquierda y situo el h2 en el centro*/
+    }
+    /*Estilos Interruptores*/
+    .toggle input[type=checkbox]{
+        height: 0;
+        width: 0;
+        visibility: hidden;
+        align-items: center;
+    }
+
+    .toggle label{
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 30px;
+        height: 15px;
+        background: #8f1919;
+        border-radius: 15px;
+        position: relative;
+        margin: 0;
+    }
+
+    .toggle label:after{
+        content: '';
+        position: absolute;
+        top: 2.5px;
+        left: 2px;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border-radius: 13px;
+        transition: .3s;
+    }
+
+    .toggle input:checked + label{
+        background: #40916C;
+
+    }
+
+    .toggle input:checked + label:after{
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+    }
+
+    .toggle label:hover:after{
+        width: 15px;
+    }
+    .toggle p{
+        display: none;
+    }
+
+    /*FIN Estilos Interruptores*/
+
+    /*ESTILOS RESPUESTAS*/
+    .contenedorRespuesta {
+        background: #2E6B50;
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedorRespuesta h2{
+        margin-top: 1rem;
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+    }
+    .contenedorRespuesta .sensorActivo{
+        /*Insertar Estilos Gráfico*/
+    }
+    .contenedorRespuesta .sensorApagado svg{
+    margin-top: 2rem;
+    }
+    .contenedorRespuesta .sensorApagado {
+        /*display: none;*/
+        text-align: center;
+    }
+    .contenedorRespuesta .sensorApagado h3{
+        margin-top: 1rem;
+        color: #e15959;
+    }
+    .contenedorRespuesta .sensorError {
+        /*display: none;*/
+        text-align: center;
+        margin-top: 2rem;
+        color: #fff;
+    }
+    .contenedorRespuesta .sensorError h3{
+        margin-top: 1rem;
+        color: #ff0000;
+    }
+
+/*---------APARTADO RESPONSIVE------------*/
+    /*RESPONSIVE GENERAL*/
+    @media(min-width: 650px){
+        /*Estilos Interruptores Escalados*/
+        .toggle label{  /*Esta es la casilla*/
+            width: 40px;
+            height: 20px;
+            border-radius: 30px;
+        }
+        .toggle label:after{    /*El boton*/
+            top: 3px;
+            left: 2.8px;
+            width: 13px;
+            height: 13px;
+            border-radius: 15px;
+        }
+        .toggle input:checked + label:after{    /*El boton al moverse*/
+            left: calc(100% - 3.5px);
+        }
+    }
+    @media(min-width: 800px){
+        body{
+            background-color: #2E6B50;
+        }
+        h2{
+            font-size: 3rem;
+        }
+        header{
+            background-color: #fff;
+        }
+        .contenedorTabla{
+            font-size: 2rem;
+        }
+        .contenedorTabla .tablaTecnico{
+            margin: auto;
+            width: 60%;
+        }
+        .tablaTecnico thead {
+            border: 1rem solid #2E6B50;
+        }
+        /*ICONOS DE LA TABLA*/
+        .contenedorTabla .tablaTecnico tbody tr td .bi::before{
+            font-size: 40px;
+        }
+        /*BOTON ADD ESCALADO*/
+        .add{
+            width: 43px;
+            height: 40px;
+            line-height: 45px;
+            border-bottom: solid 2px #4f1a41;
+        }
+        .add p {
+            font-size: 25px;
+        }
+    }
+    @media(min-width: 900px){
+        /*BOTON ADD ESCALADO*/
+        .add{
+            width: 50px;
+            height: 50px;
+            line-height: 55px;
+            border-bottom: solid 3px #4f1a41;
+        }
+        .add p {
+            font-size: 30px;
+        }
+        /*Boton de cerrar sesion*/
+        .boton-cerrarsesion {
+            width: 130px;
+            height: 45px;
+            font-size: 1rem;
+        }
+    }
+
+    /*FIN RESPONSIVE GENERAL*/
+    @media(min-width: 800px){
+        /*Datos Cliente*/
+        .cuerpo{
+            background-color: #fff;
+        }
+    }
+
+    @media(min-width: 800px){
+        /*APARTADO RESPONSIVE MENU*/
+        .contenedorSuperiorMenu .bloque-buscar{
+            flex-direction: row;
+            width: 40%;
+            margin-bottom: 1rem;
+        }
+        .bloque-buscar input {
+            background: #fff;
+            border: 0;
+            border-radius: 1rem 0 0 1rem;
+            width: 80%;
+            height: 3rem;
+            text-indent: 50px;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+        .bloque-buscar .boton-lupa{
+            background: #ecebeb;
+            border: 0;
+            border-radius: 0 1rem 1rem 0;
+            width: 20%;
+            height: 3rem;
+            font-size: 2rem;
+            color: #6e6e6e;
+            margin-left: -.5rem;
+            vertical-align: middle;
+        }
+
+        /*APARTADO RESPONSIVE DATOS*/
+        .contenedorSuperiorDatos .bi::before{
+            font-size: 30px;
+        }
+
+        /*APARTADO RESPONSIVE AGREGAR SENSOR*/
+        .contenedorSuperiorAgregarSensores{
+            margin: 30px auto 0 auto;
+        }
+        .contenedorSuperiorAgregarSensores .bi::before{
+            font-size: 30px;
+        }
+
+
+        /*APARTADO RESPONSIVE TESTEO*/
+        .contenedorSuperiorTest{
+            margin-top: 2rem;
+        }
+        .contenedorSuperiorTest .bi:before{
+            font-size: 40px;
+        }
+        .contenedorSuperiorTest div{
+            margin:0 30% 0 5%;  /*De esta forma, añado margen a la izquierda y situo el h2 en el centro*/
+        }
+            /*Estilos Interruptores Escalados*/
+            .toggle label{  /*Esta es la casilla*/
+                width: 60px;
+                height: 30px;
+                border-radius: 30px;
+            }
+            .toggle label:after{    /*El boton*/
+                top: 5px;
+                left: 5px;
+                width: 20px;
+                height: 20px;
+                border-radius: 15px;
+            }
+            .toggle input:checked + label:after{    /*El boton al moverse*/
+                left: calc(100% - 5px);
+            }
+            @media(min-width: 1050px){
+                .contenedorSuperiorTest div{
+                    margin:0 37.5% 0 5%;  /*De esta forma, añado margen a la izquierda y situo el h2 en el centro*/
+                }
+            }
+    }

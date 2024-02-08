@@ -1,0 +1,22 @@
+{
+  "cliente": {
+    "contrasena": "cliente",
+    "pagina": "Cliente/cliente.html"
+  },
+  "Usuario": {
+    "contrasena": "usuario",
+    "pagina": "UF/PaginaUsuarioFinal.html"
+  },
+  "tecnico": {
+    "contrasena": "tecnico",
+    "pagina": "Tecnico/Tecnico_Menu.html"
+  },
+  "comercial": {
+    "contrasena": "comercial",
+    "pagina": "comercial/Comercial.html"
+  },
+  "admin": {
+    "contrasena": "admin",
+    "pagina": "admin/indexAdmin.html"
+  }
+}

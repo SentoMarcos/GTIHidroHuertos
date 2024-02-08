@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GTI Iniciar sesion</title>
+    <!---------Enlace Boostrap Iconos--------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!---------Enlace estilos----------------->
+    <link rel="stylesheet" href="css/formularios.css">
+    <!---------Enlace estilos menu-------->
+    <link rel="stylesheet" href="css/burgerMenu.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+
+<!----------------------------------------->
+<!---------Inicio seccion cabecera--------->
+<!----------------------------------------->
+<header>
+    <nav id="menu-principal">
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="img/logo.jpeg" alt="Imagen_logo" id="imagen_logo"></a>
+        </div>
+
+        <ul class="opciones_menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="hidroponia.html">Hidroponia</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="formulario.html">Contacta</a></li>
+        </ul>
+        <a class="user_icono" href="inicioSesion.html">
+            <i class="bi bi-person-circle" id="imagen_user"></i>
+        </a>
+        <div class="hamburguesa">
+            <i class="bi bi-list"></i>
+        </div>
+    </nav>
+
+</header>
+<!----------------------------------------->
+<!----------Fin seccion cabecera----------->
+<!----------------------------------------->
+
+
+<!-----------------------------------------
+--------------SECCION FORMULARIO=----------
+------------------------------------------->
+<section class="formulario" id="login">
+    <h1>Inicio de sesión</h1>
+    <form class="iniciarSesionForm" id="login-form">
+        <h3>Usuario</h3>
+        <div class="usuario">
+            <input id="usuario" name="nombre" type="text" required>
+        </div>
+        <!--<div> correspondiente a la casilla donde el usuario rellena el nombre de usuario -->
+        <h3>Contraseña</h3>
+        <div class="Contraseña">
+            <input id="password" type="password" name="contrasenya" required>
+        </div>
+        <!--<div> correspondiente a la casilla donde el usuario rellena la contraseña-->
+        <div id="botones_inicio_sesion">
+            <button class="botonRecordar" id="botonRecordar">Recordar contraseña</button>
+            <button type="submit" class="botoniniciarsesionn" id="botonIniciarSesion">Iniciar sesión</button>
+            <div class="investigarMas">
+                <p>¿No tiene una cuenta?</p>
+                <a href="nosotros.html"><p class="conocernosmas">¡Descubre más!</p></a>
+            </div>
+        </div>
+    </form>
+    <div id="output">
+        Área de mensajes
+    </div>
+</section>
+
+<!----------------------------------------->
+<!--------Fin seccion formulario----------->
+<!----------------------------------------->
+<script>
+    const usuarioInput = document.getElementById('usuario');
+    const passwordinput = document.getElementById('password')
+
+    usuarioInput.addEventListener('invalid', function () {
+        this.setCustomValidity('Por favor, ingresa un nombre de usuario válido.');
+    });
+
+    usuarioInput.addEventListener('input', function () {
+        this.setCustomValidity('');
+    });
+
+    passwordinput.addEventListener('invalid', function () {
+        this.setCustomValidity('Por favor, ingresa una contraseña válida.');
+    });
+
+    passwordinput.addEventListener('input', function () {
+        this.setCustomValidity('');
+    });
+</script>
+<!----------------------------------------->
+<!--------la pagina de inicio de sesion----
+---------no posee cabecera para mantener---
+--------la estetica limpia de la pagina----
+------------------------------------------->
+
+<!-------------------------------------------------->
+<!--------Inicio pop up, contraseña olvidada-------->
+<!-------------------------------------------------->
+<dialog id="popuprecordar">
+    <div class="recordarpopup">
+        <a id="cerrar" class="icono_cerrar_ventana">
+            <i class="bi bi-x-square"></i>
+        </a>
+        <a class="lock_icono">
+            <i class="bi bi-lock-fill"></i>
+        </a>
+        <h3 class="problemas-popup">¿Problemas al<br>iniciar sesión?</h3>
+        <div class="contenidoPopup">
+            <form id="formRecordar">
+                <p>Introduce tu correo o usuario y<br>recibiras un correo con la contraseña</p>
+                <input id="correoElectronico" type="email" placeholder="Correo electrónico" class="inputpopup" required>
+                <!--  <input type="email" placeholder="Correo electrónico" required> -->
+                <div class="boton_enviar_cont">
+                    <button type="submit" id="enviar" class="botoniniciarsesionn">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+<!--este es el script referente al pop up de recordar contrasenya-->
+<script>
+    const botonrecordar = document.getElementById('botonRecordar');
+    const popuprecordar = document.getElementById('popuprecordar');
+    const cerrar = document.getElementById('cerrar');
+    const enviar = document.getElementById('enviar');
+    const correoElectronicoInput = document.getElementById('correoElectronico');
+
+    botonrecordar.addEventListener('click', () => {
+        popuprecordar.showModal();
+        popuprecordar.style.display = 'block';
+    }); // Abre el pop-up al hacer clic
+
+    cerrar.addEventListener('click', () => {
+        popuprecordar.close();
+        popuprecordar.style.display = 'none';
+    }); // Cierra el pop-up al hacer clic
+
+    enviar.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita que se envíe el formulario automáticamente
+
+        const correoElectronico = correoElectronicoInput.value.trim();
+
+        if (correoElectronico === '') {
+            correoElectronicoInput.classList.add('error');
+            return; // Detiene la ejecución si el campo está vacío
+        }
+
+        // Realiza la redirección a la página deseada
+        window.location.href = 'ContactoPronto.html';
+    });
+
+    correoElectronicoInput.addEventListener('input', () => {
+        correoElectronicoInput.classList.remove('error');
+    });
+</script>
+<!-------------------------------------------------->
+<!--------Fin pop up, contraseña olvidada----------->
+<!-------------------------------------------------->
+
+<!-- INCIO DE LA SECCION footer ----------->
+<footer class="footer">
+    <p>&#169 Copyright 2023 All Rights Reserved</p>
+</footer>
+<!-- Fin DE LA SECCION footer ----------->
+
+<!----------Aqui van los scripts---------->
+<script src="js/menuDesplegable.js" defer></script>
+<script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Técnico-Registro</title>
+    <meta name="viewport" content="width=device-width, shrink-to-fit, initial-scale=1">
+
+    <!--Carga CSS bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <link rel="stylesheet" href="../css/tecnico.css">
+</head>
+
+<body>
+<!----------------------------------------->
+<!---------Inicio seccion cabecera--------->
+<!----------------------------------------->
+<header class="encabezado" role="banner"> <!--que rol esta desempenyando-->
+    <div class="logo"><a href="../../index.html"><img src="../../img/logo.jpeg" alt="logo GTI"></a></div>
+    <!--aqui va el boton cerrar sesion-->
+    <div><button type="button" class="boton-cerrarsesion" id="boton-cerrarsesion">Cerrar sesión</button></div>
+</header>
+<!----------------------------------------->
+<!----------Fin seccion cabecera----------->
+<!----------------------------------------->
+<div class="contenedorSuperiorAgregarSensores">
+    <div><i class="bi bi-arrow-return-left"></i></div>
+    <h2>Verificación y lectura de los sensores</h2>
+    <div class="add"><p>+</p></div>
+</div>
+
+<div class="contenedorTabla">
+    <table class="tablaTecnico">
+        <thead>
+        <tr>
+            <th>ID Sensor</th>
+            <th>Tipo de Sensor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>32dwa</td>
+            <td>Humedad</td>
+        </tr>
+        <tr>
+            <td>32eaw</td>
+            <td>Temperatura</td>
+        </tr>
+        <tr>
+            <td>242sc</td>
+            <td>pH</td>
+        </tr>
+        <tr>
+            <td>23fvs</td>
+            <td>Salinidad</td>
+        </tr>
+        <tr>
+            <td>234asd</td>
+            <td>Luminosidad</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="contenedorInferiorAgregarSensor">
+    <button> Agregar otro Huerto</button>
+</div>
+
+<!----------------------------------------->
+<!----------Inicio seccion Footer---------->
+<!----------------------------------------->
+<footer class="PiePagina">
+    <div class="Copyright">Copyright 2023 All rights Reserved</div>
+    <div class="Version">1.0.0.0</div>
+</footer>
+
+
+<!----------------------------------
+       pop up cerrar sesion
+----------------------------------->
+<dialog id="cerrarsesion">
+    <div class="cerrarsesionpopup">
+        <h3>¿Desea cerrar sesión?</h3>
+        <div class="botonespopup">
+            <button class="botonpopup" id="si-cerrar">Si</button>
+            <button class="botonpopup" id="no-cerrar">No</button>
+        </div>
+    </div>
+</dialog>
+<script>
+    const botoncerrarsesion = document.getElementById("boton-cerrarsesion");
+    const popupcerrar = document.getElementById('cerrarsesion');
+    const botonsi = document.getElementById('si-cerrar');
+    const botonno = document.getElementById('no-cerrar');
+    //se recogen los identificadores de la maquetacion y se agrega un listener para escuchar
+    //cuando el usuario hace click y se debe mostrar o cerrar el pop up
+
+    botoncerrarsesion.addEventListener('click', () => {
+        popupcerrar.showModal();
+        popupcerrar.style.display = "block";
+    });
+
+    botonno.addEventListener('click', () => {
+        popupcerrar.close();
+        popupcerrar.style.display = "none";
+    });
+
+    botonsi.addEventListener('click', () => {
+        window.location.replace('../../index.html')
+    }); //le manda a la landing page si confirma el cierre de sesion
+</script>
+</body>
+</html>

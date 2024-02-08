@@ -1,0 +1,321 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&family=Ruda:wght@500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/codec-pro');
+
+:root {/*variables de tipo estilo*/
+    --cooperativo_segundario: #682155;
+    --corporativo: #820053;
+    --verde_secundario: #40916c;
+    --titulos: #2d6a4f;
+    --blanco: #ffffff;
+    --text: #111111;
+    --menu-height: 3rem;
+}
+
+/* Estilos para h1 */
+h1 {
+    font-size: 48px;
+    /* Otros estilos para h1 */
+}
+/* Estilos para h2 */
+h2 {
+    font-size: 28px;
+    /* Otros estilos para h2 */
+}
+
+
+/**************************************************************/
+/*************Inicio encabezado landing page(index)************/
+/**************************************************************/
+.bienvenidos{
+    background: url("../img/Landing_page.jpg") no-repeat center top ;
+    color: #ffffff;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   /* width: 100%; */
+}
+
+.bienvenidos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo oscuro semi-transparente */
+}
+
+@viewport {
+    zoom: 1.0;
+}
+
+
+/**************************************************************/
+/*************Inicio estilos landing page(index)***************/
+/**************************************************************/
+.texto-encabezado{
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    flex: 1 1 100%;
+    margin-top: 100px;
+}
+.texto-encabezado .titulo{
+    margin-top: 0;
+}
+.titulo{
+    margin-top: 50px;
+    font-size: 78px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    line-height: 1.2;
+    font-family: "Ruda Bold", "Ruda", sans-serif;
+
+}
+.paragraph {
+    font-size: 34px;
+    max-width: 63%;
+    margin-bottom: 40px;
+    word-break: break-word;
+    color:var(--blanco);
+    font-family: "Assistant", sans-serif;
+}
+
+@viewport {
+    zoom: 1.0;
+}
+
+
+/*Call to action boton*/
+.btn-primary{
+    padding: 15px 40px;
+    font-size: 30px;
+    background-color: var(--corporativo) ;
+    border-color: transparent;
+    transition: all .5s ease;
+    margin-top: 3rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+/*Call to action boton estilos cuando el raton esta encima*/
+/*Call to action boton estilos cuando se active el boton*/
+.btn-primary:link,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus:active,
+.btn-primary:active:focus{
+    background-color: var(--cooperativo_segundario);
+    border-color: transparent;
+}
+.flecha-bajar a{
+    display: inline-block;
+    color: #ffffff;
+    animation: flecha_animada 2s ease-in-out infinite;    /*llamamos a la animación*/
+}
+/*el tamanio de la flecha*/
+.bi-chevron-compact-down::before {
+    font-size: 6rem;
+}
+
+/*----------------------
+animacion de la flecha
+----------------------*/
+@keyframes flecha_animada {
+    from{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(8px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+/**************************************************************/
+/*************FIN estilos landing page(index)***************/
+/**************************************************************/
+
+/**********************************************************/
+/*************inicio estilos index-ejemplo*****************/
+/**********************************************************/
+.ejemplo{
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../img/Landing_page_abajo_1500.jpg"); /*La imagen se pone como fondo*/
+    left: 0;
+}
+.ejemplo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Color de fondo oscuro semi-transparente */
+}
+.ejemplo h2{
+    color: var(--blanco);
+    margin-top: 40px;
+  /*  margin-bottom: 200px;*/
+    font-weight: normal;
+    font-family: "Assistant", sans-serif;
+    z-index: 1;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+.row .col-1{
+    margin-right: 300px;
+}
+
+.ejemplo img {
+    padding-bottom: 21px;
+    height: 30rem;
+    align-self: center;
+}
+
+/**********************************************************/
+/**************  FIn estilos index-ejemplo*****************/
+/**********************************************************/
+
+/**********************************************************/
+/*************FIN estilos index ***************************/
+/**********************************************************/
+
+/*Medias*/
+@media screen and (min-width: 1700px) {
+
+    .ejemplo h2{
+          margin-bottom: 200px;
+    }
+}
+@media screen and (max-width: 1600px) {
+    .titulo{
+        font-size: 48px;;
+    }
+    .paragraph {
+        font-size: 28px;
+    }
+    .btn-primary{
+        padding: 10px 20px;
+        font-size: 30px;
+    }
+    .bi-chevron-compact-down::before {
+        font-size: 5rem;
+    }
+    .ejemplo h2{
+        font-size:30px;
+        margin-bottom: 100px;
+    }
+    .ejemplo img {
+        margin-bottom: 0px;
+        height: 20rem;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .titulo{
+        font-size: 43px;
+    }
+    .paragraph {
+        font-size: 28px;
+    }
+    .btn-primary{
+        padding: 10px 20px;
+        font-size: 30px;
+    }
+    .bi-chevron-compact-down::before {
+        font-size: 5rem;
+    }
+    .ejemplo h2{
+        font-size:25px;
+        margin-bottom: 50px;
+    }
+    .ejemplo img {
+        margin-bottom: 0px;
+        height: 17rem;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    titulo{
+        font-size:  38px;
+    }
+    .paragraph {
+        font-size: 22px;
+    }
+    .bi-chevron-compact-down::before {
+        font-size: 4rem;
+    }
+    .ejemplo h2{
+        font-size:23px;
+        margin-bottom: 50px;
+    }
+    .ejemplo img {
+        margin-bottom: 0px;
+        height: 15rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    titulo {
+        font-size: 35px;
+    }
+
+    .paragraph {
+        font-size: 20px;
+        max-width: 80%;
+    }
+
+    .bi-chevron-compact-down::before {
+        font-size: 4rem;
+    }
+
+}
+    @media screen and (max-width: 700px) {
+    titulo{
+        font-size:  32px;
+    }
+    .paragraph {
+        max-width: 90%;
+    }
+        .btn-primary{
+            padding: 8px 18px;
+            font-size: 30px;
+        }
+    .bi-chevron-compact-down::before {
+        font-size: 4rem;
+    }
+
+
+}
+@media screen and (max-width: 600px) {
+    .ejemplo h2 {
+        max-width: 80%;
+    }
+
+}

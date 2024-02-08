@@ -1,0 +1,676 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&family=Ruda:wght@500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/codec-pro');
+:root {/*variables de tipo estilo*/
+    --cooperativo_segundario: #682155;
+    --corporativo: #820053;
+    --verde_secundario: #40916c;
+    --titulos: #2d6a4f;
+    --blanco: #ffffff;
+    --text: #111111;
+    --menu-height: 3rem;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+dialog {
+    display: none;
+}
+/* estilos del difuminado tras la activacion de un dialog con showmodal() */
+dialog::backdrop {
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(1px);
+}
+/* estilos del contenedor del header */
+.encabezado {
+    flex: 0 0 auto;
+    height: 65px;
+    display: flex;
+    border-bottom: 1px #797979 solid;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+/* estilos del logo*/
+.encabezado img{
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+}
+
+.logo {
+    margin-right: 40px;
+    margin-top: 4px;
+}
+/* estilos del contenedor que contiene el boton de cerrar
+  sesion y ademas el boton de notificaciones si el usuario
+  lo requiere*/
+.notisycerrar {
+    display: flex;
+    flex-direction: row;
+}
+.notificaciones {
+    border: 0px solid;
+    background: white;
+    height: 36px;
+    margin-right: 20px;
+    margin-top: 2px;
+}
+
+.notificaciones img {
+    height: 1.7rem;
+    margin-right: 0rem;
+}
+/* estilos del boton de cerrar sesion de todas las paginas */
+.boton-cerrarsesion {
+    width: 110px;
+    height: 36px;
+    border: 1px solid #892260;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    font-family: "Codec Pro", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    line-height: 36px;
+    padding-right: 10px;
+    margin-right: 16px;
+    margin-left: 0px;
+}
+
+/*************************************************************/
+/******************* Inicio estilos footer********************/
+/*************************************************************/
+/*Aqui va el footer*/
+.footer{
+    background-color: var(--cooperativo_segundario);
+    height: var(--menu-height);
+    width: 100%;
+    border-top: var(--text )1px solid;
+   /* bottom: 0;*/
+    /*position: absolute;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    color: var(--blanco);
+    font-family: "Ebrima Normal", "Ebrima", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/*Aqui va el footer*/
+.footer1 {
+    background-color: var(--cooperativo_segundario);
+    width: 100%;
+    border-top: var(--text) 1px solid;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* position: relative;*/
+    margin-top: auto;
+    height: 50px; /* Ajusta la altura según tus necesidades */
+}
+
+.footer1 p{
+    color: var(--blanco);
+    font-family: "Ebrima Normal", "Ebrima", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/******************************************************/
+/******************Fin estilos footer *****************/
+/******************************************************/
+
+/******************************************************/
+/*****************Inicio estilos comercial ************/
+/******************************************************/
+/*Estilos cabezera buzon*/
+
+#cabezera_buzon {
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+    padding: 2px;
+    border: 0;
+    background-color: rgba(45, 106, 79, 1);
+    box-sizing: border-box;
+    font-family: "Codec Pro", sans-serif;
+    color: #ffffff;
+    text-align: left;
+    line-height: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+}
+/*Heading de la cabezera buzon*/
+#cabezera_buzon h2 {
+    font-size: 18px;
+    font-family: "Codec Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    padding-left: 26px;
+    text-align: left;
+}
+/*estilos del contenedor del buzon*/
+.contenedortabla {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 5*var(--menu-height));
+    margin:0 auto;
+    overflow-y: auto;
+    border: 1px solid #40916c;
+    box-sizing: border-box;
+}
+/*estilos del tabla buzon*/
+.tablabuzon {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+/*estilos del formulario en el buzon*/
+.mensajebuzon {
+    margin-left: 0px;
+    margin-top: 0;
+    height: 60px;
+    width: 100%;
+}
+
+/*estilos del buzon, columnas*/
+.tablabuzon td {
+    height: 88px;
+    padding: 5px 0px 0px 10px;
+    border-bottom: 1px solid #2D6A4F;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+}
+
+.tablabuzon a{
+    height: 88px;
+    padding: 5px 0px 0px 10px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    text-decoration: none;
+    color: #111111;
+
+}
+/*estilos del nombre del que envio el formulario en el buzon*/
+
+.comercial-nombre {
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #000000;
+    text-align: left;
+    margin: 0;
+}
+
+td input[type="button"] {
+    width: 175px;
+}
+
+/*estilos de la fecha de recibo del formulario en el buzon*/
+.comercial-fecha {
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #7F7F7F;
+    font-size: 13px;
+    text-align: right;
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+/*el tamaño del contenedor de paginador*/
+.contenedor-ultima-fila {
+    width: 100%;
+    margin:0 auto;
+    height: 50px;
+    padding: 2px 2px 2px 2px;
+    border: 1px solid #2d6a4f;
+    background-color: rgba(45, 106, 79, 1);
+    box-sizing: border-box;
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/*el estilo del numero de correos nuevos*/
+.contenedor-ultima-fila h2 {
+    font-family: "Codec Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--blanco);
+    font-size: 13px;
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 15px;
+}
+/*el paginador*/
+.paginador-comercial {
+    display: flex;
+    align-items: center;
+}
+/*los botones del paginador*/
+.paginador-comercial a {
+    width: 25px;
+    height: 22px;
+    background-color: rgba(48, 95, 75, 1);
+    box-sizing: border-box;
+    font-family: "Ebrima", sans-serif;
+    color: #fffdfd;
+    text-align: center;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.paginador-comercial a:hover{
+    background-color: #40916C;
+}
+
+/*perdon, un div de relleno para usar space-between, una via rapida*/
+.relleno {
+    height: 20px;
+    color: rgba(45, 106, 79, 1);
+    padding-right: 15px;
+}
+/*El estilo de los dos botones debajo del buzon*/
+.comercial-botones-navegacion {
+    display: flex;
+    justify-content: center;
+}
+
+.comercial-botones-navegacion > div {
+    margin: 0 5px; /* Espacio entre los botones */
+}
+.comercial-botones-navegacion a{
+    text-decoration: none;/* Quita el UNDERLINE DE LOS BOTONES  */
+}
+#boton-buzon-global {
+    margin-right: 50px; /* Añadir espacio entre los botones */
+}
+
+#boton-clientes-asignados {
+    margin-left: 50px; /* Añadir espacio entre los botones */
+}
+
+
+/*Los dos botones debajo del bozon*/
+.comercial-botones-navegacion input[type="button"] {
+    width: 150px; /* Ancho de los botones */
+    margin-top: 20px;
+    background-color: var(--titulos);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px 50px;
+    font-family: "Assistant", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border: 0;
+    height: 35px;
+}
+
+.comercial-botones-navegacion div a input:hover{
+    background-color: #40916C;
+
+}
+
+.popup-buzon-global {
+    display: none;
+    position: fixed;
+    margin:auto;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #40916c;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    font-family: "Codec Pro", sans-serif;
+}
+.popup-buzon-global h2 {
+    text-align: center;
+
+}
+
+.popup-buzon-global button {
+    margin-top: 35px;
+}
+
+
+
+
+
+/******************************************************/
+/*****************FIN estilos comercial ***************/
+/******************************************************/
+
+/******************************************************/
+/***********Inicio estilos Clientes asignados**********/
+/******************************************************/
+#cabezera_clientes-asignados{
+    width: 100%;
+    margin:0 auto;
+    height: 50px;
+    padding: 2px;
+    border: 1px solid #2d6a4f;
+    background-color: rgba(45, 106, 79, 1);
+    box-sizing: border-box;
+    font-family: "Codec Pro", sans-serif;
+    color: #ffffff;
+    text-align: left;
+    line-height: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+}
+/*El H2 de la cabezera*/
+#cabezera_clientes-asignados h2 {
+    font-size: 18px;
+    font-family: "Codec Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    padding-left: 26px;
+    text-align: left;
+}
+/*Aqui van los estilos del contenedor de la informacion del cliente*/
+.comercial-info-cliente {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.comercial-info-cliente label {
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mensajebuzon p {
+     margin-top: auto;
+     color: var(--text);
+     text-align: center;
+     justify-content: center;
+     font-family: "Assistant", sans-serif;
+     font-size: 14px;
+     cursor: pointer;
+     display: flex;
+    align-items: center;
+ }
+
+
+
+/*ESTILOS elipse y circolos*/
+.espacio-elipse {
+    width: 120px;
+    height: 20px;
+    border: 1px solid var(--cooperativo_segundario);
+    border-radius: 30px;
+    background-color: #eaeaea;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.circulo {
+    background-color: transparent;
+    border: 3px solid var(--cooperativo_segundario);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+/*aqui van los estlos de los circolos que estan activos*/
+.circulo_activo {
+    background-color: var(--cooperativo_segundario);
+    border: 3px solid var(--cooperativo_segundario);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+@media (max-width: 700px){
+    .comercial-info-cliente label{
+        font-size: 15px;
+    }
+    .mensajebuzon p {
+        font-size: 12px;
+    }
+    .espacio-elipse {
+        width: 80px;
+        height: 15px;
+    }
+    .circulo {
+        width: 20px;
+        height: 20px;
+    }
+    .circulo_activo {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media (max-width: 500px){
+    .comercial-info-cliente label{
+        font-size: 14px;
+    }
+    .mensajebuzon p {
+        font-size: 12px;
+    }
+    .espacio-elipse {
+        width: 80px;
+        height: 15px;
+        margin-right: 15px;
+    }
+}
+/******************************************************/
+/***********Fin estilos Clientes asignados*************/
+/******************************************************/
+
+/******************************************************/
+/***********Inicio de informacion formulario***********/
+/******************************************************/
+/*Aqui va la felcha */
+#icono_flecha_atras {
+    color: #ffffff; /* Cambia el color a blanco */
+    font-size: 24px; /* Ajusta el tamaño de la flecha */
+}
+#cabezera-fecha-informacion{
+    width: 100%;
+    height: 50px;
+    padding: 2px;
+    border: 1px solid #2d6a4f;
+    background-color: rgba(45, 106, 79, 1);
+    box-sizing: border-box;
+    font-family: "Codec Pro", sans-serif;
+    color: #ffffff;
+    text-align: left;
+    line-height: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+
+
+
+}
+/*Heading de la cabezera buzon*/
+#cabezera_buzon p {
+    font-family: "Codec Pro Bold", "Codec Pro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    padding-left: 26px;
+    text-align: left;
+    font-size: 12px;
+
+}
+/*aqui va el estilo del nombre de tecnico*/
+.contenedor_tecnico_nombre{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/*aqui van los estilos de la elipse*/
+.contenedor_elipses_circulo{
+    width: 220px;
+    height: 20px;
+    border: 1px solid var(--cooperativo_segundario);
+    border-radius: 30px;
+    background-color: #eaeaea;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+.contenedor_tecnico_nombre p {
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    margin-top: 6px;
+}
+.contenedor_tecnico_nombre h3{
+    font-family: "Codec Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #315F4C;
+    margin: 0;
+}
+/*estilos formulario*/
+.contenedor_formularios_datos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor_formularios_datos .primer_hijo_datos_formulario {
+    margin-right: 30px;
+}
+.contenedor_formularios_datos .segundo_hijo_datos_formulario{
+    margin-left: 30px;
+}
+
+/*los datos que se piden al usuario*/
+.dato-formulario {
+    margin-bottom: 3px; /* Ajusta el espacio inferior del título */
+    font-family: "Assistant SemiBold", "Assistant", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+/*el espacio donde el usuario  puede escribir*/
+.info-formulario {
+    margin-top: 3px; /* Ajusta el espacio superior del input */
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: #797979 1px solid;
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+.formulario_todo_width{
+    display: flex;
+    justify-content: center;
+}
+
+input[type="email"] {
+    width: 37vh; /* Ajusta el ancho del input según tus necesidades */
+}
+
+#textarea {
+    width: 350px; /* Ajusta el ancho del input según tus necesidades */
+    height: 20vh;
+    display: flex;
+}
+
+/*aqui van estilos de los tres botones*/
+.comercial-botones-formulario {
+    display: flex;
+    justify-content: center;
+}
+
+.botones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4vh;
+}
+.botones {
+    margin-top: 10px;
+    background-color: var(--titulos);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px 50px;
+    font-family: "Assistant", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    height: 3rem;
+    border: 0;
+    margin: .75rem;
+}
+
+.botones:hover {
+    background-color: #40916C;
+}
+
+.boton-formulario:first-child {
+    margin-top: 20px;
+}
+.boton-formulario:last-child {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+@media (max-width: 700px) {
+    #textarea {
+        width: 350px; /* Ajusta el ancho del input según tus necesidades */
+        height: 20vh;
+        display: flex;
+    }
+}
+
+
+
+/******************************************************/
+/***********FIN de informacion formulario**************/
+/******************************************************/

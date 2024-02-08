@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tecnico Datos Cliente</title>
+
+    <!--Carga CSS bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="css/tecnico.css">
+</head>
+<body>
+<!----------------------------------------->
+<!---------Inicio Sección Cabecera--------->
+<!----------------------------------------->
+<header class="encabezado" role="banner"> <!--que rol esta desempenyando-->
+    <div class="logo"><a href="../../index.html"><img src="../../img/logo.jpeg" alt="logo GTI"></a></div>
+    <!--aqui va el boton cerrar sesion-->
+    <div><button type="button" class="boton-cerrarsesion" id="boton-cerrarsesion">Cerrar sesión</button></div>
+</header>
+
+<section class="cuerpo">
+<!----------------------------------------->
+<!-----Inicio Bloque Datos del Cliente----->
+<!----------------------------------------->
+    <div class="contenedorSuperiorDatos">
+        <div><i class="bi bi-arrow-return-left"></i></div>
+        <h2>Datos del Cliente</h2>
+    </div>
+
+    <div class="grafica">
+        <canvas id="donutChart"></canvas>
+    </div>
+
+<div class="contenedorMedioDatos">
+    <div class="datos-cliente">
+        <div>
+            <h2>Nombre:</h2>
+            <p> Javier Serrano</p>
+        </div>
+        <div>
+             <h2>Ciudad:</h2>
+             <p>Valencia</p>
+         </div>
+        <div>
+            <h2>Teléfono:</h2>
+            <p>+34 340 370 04</p>
+        </div>
+        <div>
+            <h2>Código Postal:</h2>
+            <p>46021</p>
+        </div>
+        <div>
+            <h2>Dirección de Instalación:</h2>
+            <p>Calle Rosa 32 pta.4</p>
+        </div>
+        <div>
+            <h2>Correo:</h2>
+            <p>javierser@gmail.com</p>
+        </div>
+        <div>
+            <h2>Fecha de Aceptación:</h2>
+            <p>14/05/2023</p>
+        </div>
+        <div>
+            <h2>Fecha de Instalación:</h2>
+            <p>28/05/2023</p>
+        </div>
+        <div class="infoAdicional">
+            <h2>Información Adicional:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dicta error exercitationem explicabo
+                iure nesciunt non provident reprehenderit? Deserunt dolorem eligendi possimus praesentium provident.
+                Aspernatur maxime porro quo repellendus sed?</p>
+        </div>
+    </div>
+</div>
+<div class="botonesDatos">
+    <button>Testear</button>
+    <button>Registrar Huerto</button>
+    <button>Completar Orden</button>
+</div>
+<!----------------------------------------->
+<!------Fin Sección Datos del Cliente------>
+<!----------------------------------------->
+</section>
+<!----------------------------------------->
+<!----------Inicio Sección Footer---------->
+<!----------------------------------------->
+<footer class="PiePagina">
+    <div class="Copyright">Copyright 2023 All rights Reserved</div>
+    <div class="Version">1.0.0.0</div>
+</footer>
+
+
+<!----------------------------------------->
+<!----------Inicio Script GRAFICA---------->
+<!----------------------------------------->
+<script>
+    const donutChart = document.getElementById('donutChart');
+    new Chart(donutChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['Progreso','Por hacer'],
+            datasets: [{
+                data: [75, 25],
+                backgroundColor: ['#2e6b50', '#f3f3f3'],
+            }]
+        },
+        options: {
+            cutoutPercentage: 75,
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false
+            },
+            plugins: {
+                datalabels: {
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        return percentage;
+                    },
+                    color: '#000',
+                    font: {
+                        weight: 'bold',
+                        size: 16
+                    },
+                    anchor: 'center',
+                    align: 'center'
+                }
+            }
+        }
+    });
+
+</script>
+<!----------------------------------------->
+<!------------FIN Script GRAFICA----------->
+<!----------------------------------------->
+
+
+<!----------------------------------
+       pop up cerrar sesion
+----------------------------------->
+<dialog id="cerrarsesion">
+    <div class="cerrarsesionpopup">
+        <h3>¿Desea cerrar sesión?</h3>
+        <div class="botonespopup">
+            <button class="botonpopup" id="si-cerrar">Si</button>
+            <button class="botonpopup" id="no-cerrar">No</button>
+        </div>
+    </div>
+</dialog>
+<script>
+    const botoncerrarsesion = document.getElementById("boton-cerrarsesion");
+    const popupcerrar = document.getElementById('cerrarsesion');
+    const botonsi = document.getElementById('si-cerrar');
+    const botonno = document.getElementById('no-cerrar');
+    //se recogen los identificadores de la maquetacion y se agrega un listener para escuchar
+    //cuando el usuario hace click y se debe mostrar o cerrar el pop up
+
+    botoncerrarsesion.addEventListener('click', () => {
+        popupcerrar.showModal();
+        popupcerrar.style.display = "block";
+    });
+
+    botonno.addEventListener('click', () => {
+        popupcerrar.close();
+        popupcerrar.style.display = "none";
+    });
+
+    botonsi.addEventListener('click', () => {
+        window.location.replace('../../index.html')
+    }); //le manda a la landing page si confirma el cierre de sesion
+</script>
+</body>
+</html>
